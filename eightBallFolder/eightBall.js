@@ -2,7 +2,7 @@ var net = require('net');
 
 var port = 3000;
 
-var randomArr = ["Yes", "No", "Maybe"];
+var randomArr = ["Yes", "It is certain", "It is decidely so", "No", "Maybe", "Without a doubt", "Yes definitely", "You may rely on it", "As I see it, yes", "Most likely", "Outlook good", "Signs point to yes"];
 
 var server = net.createServer(function(c){
 
@@ -12,7 +12,7 @@ var server = net.createServer(function(c){
     var input = data.toString().trim();
 
 if (input){
-  c.write(randomArr[(Math.floor((Math.random() * randomArr.length)))]);
+  c.write(randomArr[(Math.floor((Math.random() * randomArr.length)))]+"\r\n");
 } 
 })
 });
